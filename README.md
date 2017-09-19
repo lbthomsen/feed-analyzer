@@ -1,2 +1,2 @@
-# sitemap
-Quick and dirty sitemap analyzer
+# feed-analyzer
+Quick and dirty rss feed analyzer
