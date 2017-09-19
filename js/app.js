@@ -29,8 +29,8 @@
         }
     ]);
 
-    app.controller("BodyController", ["$log", "FeedService",
-        function ($log, feedService) {
+    app.controller("BodyController", ["$log", "$location", "FeedService",
+        function ($log, $location, feedService) {
             $log.debug("BodyController: starting");
 
             var that = this;
@@ -61,7 +61,9 @@
                         
                     };
                     
-                    that.spread = Math.floor((that.lastDate.getTime() - that.firstDate.getTime()) / 86400000);
+                    that.spread = (that.lastDate.getTime() - that.firstDate.getTime()) / 86400000;
+                    
+                    that.frequency = that.items.length / that.spread;
                     
                     that.loaded = true;
                     
