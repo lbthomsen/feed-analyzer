@@ -1,0 +1,37 @@
+/*
+ * Base Bootstrap Override
+ */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 54px;
+}
+
+.no-round {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 52px;
+}
+
+.footer.navbar {
+    min-height: 50px;
+    margin-bottom: 0;
+}
+
+
+/*
+ * vim: ts=4 et nowrap autoindent
+ */

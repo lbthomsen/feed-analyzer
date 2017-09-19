@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="feed-app">
+    <head>
+        <title>Quick'n'Dirty RSS Feed Analyzer</title>
+        <link rel="StyleSheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="StyleSheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css"/>
+        <link rel="StyleSheet" type="text/css" href="css/style.css"/>
+    </head>
+    <body ng-controller="BodyController as bodyCtrl">
+
+        <div class="container-fluid">
+            
+            <nav class="navbar navbar-default no-round" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href=".">Feed Analyzer</a>
+                </div>
+            </nav>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Sitemap to analyze</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <form class="form form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="sitemapUrl">Sitemap URL:</label>
+                                        <div class="col-sm-7">
+                                            <input id="sitemapUrl" class="form-control" type="url" ng-model="sitemapUrl" required autofocus/>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button class="btn btn-default" ng-click="bodyCtrl.loadSitemap(sitemapUrl)">Load Sitemap</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+            
+            <nav id="footer" class="navbar navbar-default footer no-round" role="navigation">
+                
+            </nav>
+            
+        </div>
+
+        <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript" src="node_modules/angular-xml/angular-xml.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </body>
+</html>
+<!--+
+    | vim: ts=4 et nowrap autoindent
+    +-->
