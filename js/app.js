@@ -37,6 +37,10 @@
             that.feed = {};
             that.items = [];
             that.status = "";
+            that.result = {};
+            that.firstDate = null;
+            that.lastDate = null;
+            that.loaded = false;
 
             that.loadSitemap = function (sitemap) {
                 $log.debug("BodyController: loading sitemap = %o", sitemap);
@@ -45,6 +49,22 @@
                     angular.copy(result.feed, that.feed);
                     angular.copy(result.items, that.items);
                     angular.copy(result.status, that.status);
+                    
+                    for (var i = 0, len = result.items.length; i < len; ++i) {
+                        var item = result.items[i];
+                        
+                        if (!that.firstDate || new Date(item.pubDate) < that.firstDate)
+                            that.firstDate = new Date(item.pubDate);
+                        
+                        if (!that.lastDate || new Date(item.pubDate) > that.lastDate) 
+                            that.lastDate = new Date(item.pubDate);
+                        
+                    };
+                    
+                    that.spread = Math.floor((that.lastDate.getTime() - that.firstDate.getTime()) / 86400000);
+                    
+                    that.loaded = true;
+                    
                 }, function (error) {
                     $log.error("BodyController: error = %o");
                 });

@@ -20,7 +20,7 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2 class="panel-title">Sitemap to analyze</h2>
+                    <h2 class="panel-title">Sitemap to analyse</h2>
                 </div>
                 <div class="panel-body">
                     <div class="container-fluid">
@@ -43,8 +43,24 @@
                 </div>
             </div>
 
-            <div class="panel panel-default" ng-show="bodyCtrl.status === 'ok'">
-                
+            <div class="panel panel-default" ng-show="bodyCtrl.loaded">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Analysis result</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-2">First Date</div>
+                        <div class="col-xs-2">{{bodyCtrl.firstDate}}</div>
+                        <div class="col-xs-2">Spread:</div>
+                        <div class="col-xs-2">{{bodyCtrl.spread}}</div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-2">Last Date</div>
+                        <div class="col-xs-2">{{bodyCtrl.lastDate}}</div>
+                    </div>
+                </div>
             </div>
             
             <div class="row footer">
