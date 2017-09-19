@@ -49,5 +49,10 @@ FileETag None
 deny from all
 </Files>
 
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET,PUT,POST,DELETE"
+Header set Access-Control-Allow-Headers "Access-Control-Allow-Origin,Content-Type"
+
 RewriteRule ^.git - [F]
+RewriteRule ^nbproject - [F]
 
